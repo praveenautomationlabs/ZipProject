@@ -1,0 +1,100 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< org.example:ZipProject >-----------------------
+[INFO] Building ZipProject 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact info.cukes:cucumber-junit:jar:1.2.6 has been relocated to io.cucumber:cucumber-junit:jar:1.2.6
+[WARNING] The artifact info.cukes:cucumber-core:jar:1.2.6 has been relocated to io.cucumber:cucumber-core:jar:1.2.6
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ZipProject ---
+[INFO] Deleting /Users/praveennaidu/Downloads/ZipProject/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ ZipProject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ ZipProject ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /Users/praveennaidu/Downloads/ZipProject/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ ZipProject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ ZipProject ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/praveennaidu/Downloads/ZipProject/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ ZipProject ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+[TestNGContentHandler] [WARN] It is strongly recommended to add "<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >" at the top of your file, otherwise TestNG may fail or not work as expected.
+@zip
+Feature: Verify the user is able to add new employee and edit the details and delete
+
+  @zip1
+  Scenario Outline: Verify user is able to add employee and account is created    # ZipPay.feature:10
+    Then Create a new employee "<FirstName>" "<LastName>" "<StartDate>" "<Email>"
+    And verify account is created "<user>"
+
+    Examples: 
+
+  Background: This function will login to application # ZipPay.feature:5
+    Given Login with default username/password        # ZipTest.login_with_default_username_password()
+
+  @zip1 @zip
+  Scenario Outline: Verify user is able to add employee and account is created  # ZipPay.feature:15
+    Then Create a new employee "Test1" "Test2" "2020-02-07" "example@gmail.com" # ZipTest.create_a_new_employee(String,String,String,String)
+    And verify account is created "Test1 Test2"                                 # ZipTest.verify_account_is_created(String)
+
+  Background: This function will login to application # ZipPay.feature:5
+    Given Login with default username/password        # ZipTest.login_with_default_username_password()
+
+  @zip1 @zip
+  Scenario Outline: Verify user is able to add employee and account is created  # ZipPay.feature:16
+    Then Create a new employee "Test1" "Test3" "2020-02-07" "example@gmail.com" # ZipTest.create_a_new_employee(String,String,String,String)
+    And verify account is created "Test1 Test3"                                 # ZipTest.verify_account_is_created(String)
+
+  Background: This function will login to application # ZipPay.feature:5
+    Given Login with default username/password        # ZipTest.login_with_default_username_password()
+
+  @zip1 @zip
+  Scenario Outline: Verify user is able to add employee and account is created    # ZipPay.feature:17
+    Then Create a new employee "Test10" "Test20" "2020-02-07" "example@gmail.com" # ZipTest.create_a_new_employee(String,String,String,String)
+    And verify account is created "Test10 Test20"                                 # ZipTest.verify_account_is_created(String)
+
+  Background: This function will login to application # ZipPay.feature:5
+    Given Login with default username/password        # ZipTest.login_with_default_username_password()
+
+  @zip1 @zip
+  Scenario Outline: Verify user is able to add employee and account is created    # ZipPay.feature:18
+    Then Create a new employee "Test10" "Test30" "2020-02-07" "example@gmail.com" # ZipTest.create_a_new_employee(String,String,String,String)
+    And verify account is created "Test10 Test30"                                 # ZipTest.verify_account_is_created(String)
+
+  Background: This function will login to application # ZipPay.feature:5
+    Given Login with default username/password        # ZipTest.login_with_default_username_password()
+
+  @zip1 @zip
+  Scenario Outline: Verify user is able to add employee and account is created    # ZipPay.feature:19
+    Then Create a new employee "Praveen" "Naidu" "2020-02-07" "example@gmail.com" # ZipTest.create_a_new_employee(String,String,String,String)
+    And verify account is created "Praveen Naidu"                                 # ZipTest.verify_account_is_created(String)
+
+5 Scenarios (5 passed)
+15 Steps (15 passed)
+1m11.303s
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 72.27 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:17 min
+[INFO] Finished at: 2020-02-08T21:18:09+11:00
+[INFO] ------------------------------------------------------------------------

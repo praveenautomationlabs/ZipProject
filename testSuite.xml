@@ -1,0 +1,7 @@
+<suite name="zipSuite">
+    <test name="zipTest">
+        <classes>
+            <class name="stepDefinitions.TestSuiteRunner" />
+        </classes>
+    </test>
+</suite>
